@@ -14,3 +14,11 @@
 #bullets {
 	font-size: .8em;
 }
+
+a:hover {
+	color: purple;
+}
+
+.job h3 {
+	color: #4C2516;
+}
