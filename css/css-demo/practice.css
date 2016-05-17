@@ -1,0 +1,24 @@
+#contact-info {
+	font-size: .8em;
+}
+
+.job {
+	background-color: #e9e5dc;
+	border-radius: 20px;
+	padding-left: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+#bullets {
+	font-size: .8em;
+}
+
+a:hover {
+	color: purple;
+}
+
+.job h3 {
+	color: #4C2516;
+}
