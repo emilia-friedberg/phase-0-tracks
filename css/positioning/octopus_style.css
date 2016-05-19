@@ -9,16 +9,19 @@
 
 .glasses {
 	display: block;
-	margin-left: 29em;
-	margin-top: -11.8em;
-	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: -11.8em;
+	left: .4em;
 	z-index: 2;
 }
 
 .hat {
 	display: block;
-	margin-left: 25em;
-	margin-top: -22em;
-	position: absolute;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: -26em;
 	z-index: 2;
 }
