@@ -3,4 +3,22 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5em;
+	position: relative;
+	z-index: 1;
+}
+
+.glasses {
+	display: block;
+	margin-left: 29em;
+	margin-top: -11.8em;
+	position: absolute;
+	z-index: 2;
+}
+
+.hat {
+	display: block;
+	margin-left: 25em;
+	margin-top: -22em;
+	position: absolute;
+	z-index: 2;
 }
