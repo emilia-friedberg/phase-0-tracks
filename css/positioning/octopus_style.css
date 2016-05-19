@@ -1,0 +1,28 @@
+.octopus {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5em;
+	position: relative;
+	z-index: 1;
+}
+
+.glasses {
+	display: block;
+	left: .4em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: -11.8em;
+	z-index: 2;
+}
+
+.hat {
+	display: block;
+	left: 1em;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: -26em;
+	z-index: 2;
+}
