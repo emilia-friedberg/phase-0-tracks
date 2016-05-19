@@ -9,16 +9,17 @@
 
 .glasses {
 	display: block;
+	left: .4em;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 	top: -11.8em;
-	left: .4em;
 	z-index: 2;
 }
 
 .hat {
 	display: block;
+	left: 1em;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
