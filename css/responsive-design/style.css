@@ -45,3 +45,40 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*
+
+for a width of 500 px or less, background will become hot pink; larger than 500 it stays white
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+
+@media screen and (max-width: 500px) {
+  #external-links {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  h1 {
+    font-size: 99%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
