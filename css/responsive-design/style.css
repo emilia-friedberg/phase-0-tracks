@@ -1,3 +1,7 @@
+body {
+  max-width: 960px;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -12,6 +16,17 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+#external-links {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+width: 75%;
+display: inline-block;
 }
 
 /* you're welcome to edit the
@@ -30,3 +45,40 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*
+
+for a width of 500 px or less, background will become hot pink; larger than 500 it stays white
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+
+@media screen and (max-width: 500px) {
+  #external-links {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  h1 {
+    font-size: 99%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
