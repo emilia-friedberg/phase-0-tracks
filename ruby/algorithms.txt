@@ -1,0 +1,45 @@
+Elevator Algorithm for Robot:
+
+- Locate button panel outside of elevator.
+- Select the button for the direction you'd like to travel in the elevator.
+	- If the desired floor is above you, press the up button.
+	- If the desired floor is below you, press the down button.
+- Wait for the elevator to arrive.
+- If there are other people in the elevator:
+	- Allow them time to exit.
+	- Proceed directly forward into the elevator.
+- Otherwise:
+	- Proceed directly forward into the elevator.
+- Locate the button panel inside of the elevator.
+- Scan list of buttons from top to bottom, left to right until you locate your desired floor.
+- Press the button for your desired floor.
+- Until you reach your current floor:
+	- Wait in elevator.
+	- If other people enter the elevator before you reach your floor:
+		- Move aside to allow them room.
+- Exit elevator.
+
+Leaving House to Go to Work:
+
+- Exit home.
+	- Close door behind you.
+	- Take out car key.
+- Walk to the gate.
+- Unlatch the gate.
+- Press button on the car key to unlock the car.
+- Walk to driver's side door of car.
+- Open door.
+- Get in car.
+- Put bag in passenger seat and water bottle in cupholder.
+- Put key in ignition.
+- Put foot on the brake.
+- If there is a car parked in front of you on the street:
+	- Put car in reverse.
+	- Check rearview mirror to ensure no cars directly behind you.
+	- Take foot off brake.
+	- Allow car to move backwards until sufficient distance has been created between car and car in front.
+	- Put foot back on brake.
+	- Put car in drive.
+- Otherwise:
+	- Put car in drive.
+- Drive away.
