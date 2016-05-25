@@ -37,8 +37,6 @@ until employee_number == 0
 	puts "Would you like to enroll in the company's health insurance? (y/n)"
 	health_insurance = gets.chomp
 	
-	
-	
 	# Condition 1: If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 	
 	if correct_age == true && (garlic_bread == "y" || health_insurance == "y")
@@ -70,10 +68,23 @@ until employee_number == 0
 		vampire_status = "definitely"
 	else
 		#do nothing
-	end
+	end	
 	
+	#add allergy loop
 	
-	# Condition 5: Otherwise, print “Results inconclusive.”
+		puts "Do you have any allergies? Please enter them one at a time. Type 'done' when finished."
+			allergy = nil
+		while allergy != "sunshine"
+			allergy = gets.chomp
+			if allergy == "sunshine"
+				vampire_status = "probably"
+				break
+			elsif allergy == "done"
+				break
+			end
+		end
+
+	# check results
 	
 	case vampire_status
 	when "definitely"
