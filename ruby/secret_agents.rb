@@ -7,7 +7,13 @@ def encrypt(str)
 # For each letter by index advance by 1
 
  while index < str.length
-   str[index] = str[index].next
+ 
+# Edge case conditional for z
+ 	if str[index] == "z"
+ 		str[index] = "a"
+	else
+		str[index] = str[index].next
+	end
    index += 1
  end
 
@@ -15,8 +21,6 @@ def encrypt(str)
 
  puts str
 end
-
-encrypt("abc")
 
 # Decrypt
 
