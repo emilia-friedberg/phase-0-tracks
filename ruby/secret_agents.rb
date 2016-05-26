@@ -22,7 +22,6 @@ def encrypt(str)
  puts str
 end
 
-
 # Decrypt
 
 def find_previous_letter(letter)
@@ -54,4 +53,27 @@ def decrypt(str)
  print str
 end
 
-decrypt(encrypt("swordfish"))
+# nested method call NOT WORKING
+# decrypt(encrypt("swordfish"))
+
+# Our Driver Code
+
+# ask agent if they want to decrypt or encrypt
+
+puts "Would you like to encrypt or decrypt a password?"
+de_or_en = gets.chomp
+
+# ask for password
+puts "Enter your password."
+
+password = gets.chomp
+
+# conduct requested operation and print result
+
+if de_or_en == "decrypt"
+	decrypt(password)
+elsif de_or_en== "encrypt"
+	encrypt(password)
+else
+	puts "Error."
+end
