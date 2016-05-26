@@ -22,6 +22,7 @@ def encrypt(str)
  puts str
 end
 
+
 # Decrypt
 
 def find_previous_letter(letter)
@@ -53,4 +54,4 @@ def decrypt(str)
  print str
 end
 
-decrypt("dog")
+decrypt(encrypt("swordfish"))
