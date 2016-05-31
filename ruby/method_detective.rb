@@ -5,9 +5,9 @@
 # committed the crime, add additional calls to prove it.
 
 "iNvEsTiGaTiOn".swapcase
-=> “InVeStIgAtIoN”
+# => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".gsub("o", "oo")
 # => “zoom”
 
 # "enhance".<???>
