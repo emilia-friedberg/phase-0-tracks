@@ -1,3 +1,11 @@
+def build_array(n1,n2,n3)
+  [n1,n2,n3]
+end
+
+def add_to_array(arry, item)
+  arry << item
+end  
+
 # Initialize an empty array and store it in a variable (you can choose the name). Print the variable using p.
 
   card_games = []
@@ -49,3 +57,12 @@
 
   best_card_games = card_games + other_card_games
   p best_card_games
+
+
+# Calling build array method
+  p build_array(1,2,3)
+
+
+#Calling add_to_array tests
+  p add_to_array([1,2,3],4)
+  p add_to_array(["pigs","canaries","gazelle"],"tiger")
