@@ -1,27 +1,40 @@
-# initialize the hash
+# get user input
 
-client_preferences = {}
+# name
+puts "Name:"
+name = gets.chomp
 
-# ask for user input
-
-#first name
-puts "First Name:"
-first_name = gets.chomp
-client_preferences[:first_name] = first_name
-
-#last name
-puts "Last Name:"
-last_name = gets.chomp
-client_preferences[:last_name] = last_name
-
-#client age
+# client age
 puts "Age:"
 age = gets.chomp.to_i
-client_preferences[:age] = age
 
-#number of children
-puts "Number of Children:"
-number_of_children = gets.chomp.to_i
-client_preferences[:number_of_children] = number_of_children
+# number of rooms
+puts "Number of Rooms:"
+number_of_rooms = gets.chomp.to_i
+
+# pets?
+puts "Do you have pets? (y/n)"
+pet_answer = gets.chomp
+  
+  #convert pet answer to boolean
+  if pet_answer = "y"
+    has_pets = true
+  else
+    has_pets = false
+  end
+  
+# favorite_color
+puts "What is your favorite color?"
+favorite_color = gets.chomp
+
+# initialize the hash, populating with user input
+
+client_preferences = {
+  name: name,
+  age: age,
+  number_of_rooms: number_of_rooms,
+  has_pets: has_pets,
+  favorite_color: favorite_color,
+}
 
 p client_preferences
