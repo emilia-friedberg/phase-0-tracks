@@ -43,10 +43,12 @@ art_gallery = {
 # add Raphael to list of people in the School of Athens
 
 art_gallery[:school_of_athens][:people] << "Raphael"
+art_gallery[:school_of_athens][:people]
 
 # capitalize first letter of "guy with the flowers in his bottom"
 
 art_gallery[:garden_of_earthly_delights][:people][2].capitalize
+p art_gallery[:garden_of_earthly_delights][:people][2]
 
 # remove "oversized birds" from list of objects in "the Garden of Earthly Delights"
 
