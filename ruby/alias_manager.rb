@@ -6,14 +6,17 @@
     # rejoin letters of name into a string, and capitalize the first letter
   # repeat above steps for last name
   # rejoin first and last name in reverse order
-  
-  
-  
+
+# Provide a user interface that lets a user enter a name and get a fake name back. 
+
+puts "Welcome to the Alias Creator!"
+puts "Please enter your full name."
+
 def alias_creator(full_name)
   full_name = full_name.downcase
   name = full_name.split(' ').to_a
-  p first_name = name[0]
-  p last_name = name[1]
+  first_name = name[0]
+  last_name = name[1]
   first_name_letters = first_name.split('')
   last_name_letters = last_name.split('')
   vowels = ["a", "e", "i", "o", "u", "a"]
@@ -46,8 +49,12 @@ def alias_creator(full_name)
   new_last_name = last_name_letters.join('').capitalize
 
   new_name = new_last_name + " " + new_first_name
-  p new_name
-  
+  return new_name
+    
 end
 
-alias_creator("Felicia Torres")
+begin
+  name = gets.chomp
+  puts "Thank you! Your alias is #{alias_creator(name)}."
+  puts "Enter another name, or type 'quit'."
+end until name == "quit"
