@@ -1,3 +1,4 @@
+# method that takes a block
 def llama_mood
   mood_today = "cheerful"
   mood_yesterday = "bummed out"
@@ -5,4 +6,28 @@ def llama_mood
   yield(mood_today, mood_yesterday)
 end
 
-llama_mood { |mood_today, mood_yesterday| puts "It looks like our llama is #{mood_today} today! She was #{mood_yesterday} yesteday. Must be the new food." }
+llama_mood { |mood_today, mood_yesterday| puts "It looks like our llama is #{mood_today} today! She was #{mood_yesterday} yesterday. Must be the new food." }
+
+# declaring an array
+
+llama_names = ["Millicent", "Conrad", "Smelly", "Ethan", "Pete"]
+
+puts "Original Names:"
+p llama_names
+
+# iterate through array with .each
+llama_names.each do |llama_names|
+end
+
+puts "After .each call:"
+p llama_names
+
+# declaring a hash
+
+llama_ages = {
+  Millicent: 7,
+  Conrad: 3,
+  Smelly: 8.5,
+  Ethan: 1,
+  Pete: 5
+}
