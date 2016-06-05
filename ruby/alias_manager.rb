@@ -7,11 +7,6 @@
   # repeat above steps for last name
   # rejoin first and last name in reverse order
 
-# Provide a user interface that lets a user enter a name and get a fake name back. 
-
-puts "Welcome to the Alias Creator!"
-puts "Please enter your full name."
-
 def alias_creator(full_name)
   full_name = full_name.downcase
   name = full_name.split(' ').to_a
@@ -52,9 +47,34 @@ def alias_creator(full_name)
   return new_name
     
 end
+  
+# Provide a user interface that lets a user enter a name and get a fake name back. 
+
+puts "Welcome to the Alias Creator!"
+puts "Please enter your first and last name."
+name = gets.chomp
+alias_manager = {}
+name_symbol = name.intern
+new_name = alias_creator(name)
+alias_manager[name_symbol] = new_name
+puts "Thank you! Your alias is #{new_name}."
+puts "Enter another name, or type 'quit'."
+
+#  Let the user do this repeatedly until they decide to quit by typing 'quit'.
 
 begin
   name = gets.chomp
-  puts "Thank you! Your alias is #{alias_creator(name)}."
-  puts "Enter another name, or type 'quit'."
-end until name == "quit"
+  if name == "quit"
+    break
+  else
+    name_symbol = name.intern
+    new_name = alias_creator(name)
+    alias_manager[name_symbol] = new_name
+    puts "Thank you! Your alias is #{new_name}."
+    puts "Enter another name, or type 'quit'."
+  end
+end until name == 'quit'
+
+alias_manager.each do |name_symbol, new_name|
+  puts "#{new_name} is really #{name_symbol}."
+end
