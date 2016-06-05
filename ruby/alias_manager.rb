@@ -52,13 +52,8 @@ end
 
 puts "Welcome to the Alias Creator!"
 puts "Please enter your first and last name."
-name = gets.chomp
+name = nil
 alias_manager = {}
-name_symbol = name.intern
-new_name = alias_creator(name)
-alias_manager[name_symbol] = new_name
-puts "Thank you! Your alias is #{new_name}."
-puts "Enter another name, or type 'quit'."
 
 #  Let the user do this repeatedly until they decide to quit by typing 'quit'.
 
@@ -75,6 +70,8 @@ begin
   end
 end until name == 'quit'
 
+# Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered.
+
 alias_manager.each do |name_symbol, new_name|
   puts "#{new_name} is really #{name_symbol}."
-end
+ end
