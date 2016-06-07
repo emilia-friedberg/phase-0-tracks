@@ -1,5 +1,8 @@
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -16,16 +19,6 @@ class Santa
     @age = 0
   end
 
-  # getter method for age
-  def age
-    @age
-  end
-
-  # getter method for ethnicity
-  def ethnicity
-    @ethnicity
-  end
-
   def celebrate_birthday
     @age = @age += 1
     # p @age
@@ -35,12 +28,6 @@ class Santa
     @reindeer_ranking.delete(reindeer_name)
     @reindeer_ranking << reindeer_name
     # p @reindeer_ranking
-  end
-
-  #setter method for gender
-  def gender=(new_gender)
-    @gender = new_gender
-    # p @gender
   end
 
 end
@@ -64,10 +51,13 @@ santas << Santa.new("other", "Martian")
 santas << Santa.new("gender fluid", "Dominican")
 santas << santa
 
-p santas
+#checking attr_reader methods for age and ethnicity
+p santa.ethnicity
+p santa.age
 
 santa.celebrate_birthday
 
 santa.get_mad_at("Vixen")
 
+#checking attr_accessor method for gender
 santa.gender=("gender fluid")
