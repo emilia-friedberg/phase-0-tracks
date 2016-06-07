@@ -1,7 +1,7 @@
 class Santa
 
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :gender, :age
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
@@ -35,29 +35,41 @@ end
 # driver code
 
 santa = Santa.new("agender", "North Poleian")
-santa.speak
-santa.eat_milk_and_cookies("double fudge")
+# santa.speak
+# santa.eat_milk_and_cookies("double fudge")
 
 santas = []
 genders = ["male", "female", "agender", "genderqueer", "gender fluid", "other"]
 ethnicities = ["black", "white", "Hispanic", "Asian", "Middle-Eastern", "other"]
 
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
-end
+# genders.length.times do |i|
+#  santas << Santa.new(genders[i], ethnicities[i])
+# end
 
-santas << Santa.new("female", "Lithuanian")
-santas << Santa.new("other", "Martian")
-santas << Santa.new("gender fluid", "Dominican")
-santas << santa
+# santas << Santa.new("female", "Lithuanian")
+# santas << Santa.new("other", "Martian")
+# santas << Santa.new("gender fluid", "Dominican")
+# santas << santa
 
 #checking attr_reader methods for age and ethnicity
-p santa.ethnicity
-p santa.age
+# p santa.ethnicity
+# p santa.age
 
-santa.celebrate_birthday
+# santa.celebrate_birthday
 
-santa.get_mad_at("Vixen")
+# santa.get_mad_at("Vixen")
 
 #checking attr_accessor method for gender
-santa.gender=("gender fluid")
+# santa.gender=("gender fluid")
+
+#generating 1000 new santas with random genders and ethnicities 
+santa_count = 0
+until santa_count == 1000
+  p Santa.new(genders.sample, ethnicities.sample)
+  santa_count += 1
+  p santa_count
+end
+
+#setting santa's age to random number between 0 and 140
+
+p santa.age=rand(0..140)
