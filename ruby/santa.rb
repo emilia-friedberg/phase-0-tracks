@@ -22,3 +22,17 @@ end
 # santa = Santa.new
 # santa.speak
 # santa.eat_milk_and_cookies("double fudge")
+
+santas = []
+genders = ["male", "female", "agender", "genderqueer", "gender fluid", "other"]
+ethnicities = ["black", "white", "Hispanic", "Asian", "Middle-Eastern", "other"]
+
+genders.length.times do |i|
+  santas << Santa.new(genders[i], ethnicities[i])
+end
+
+santas << Santa.new("female", "Lithuanian")
+santas << Santa.new("other", "Martian")
+santas << Santa.new("gender fluid", "Dominican")
+
+p santas
