@@ -35,7 +35,7 @@ class Cards
 
   def check_stickiness
     if @stickiness >= 2
-      puts "Your cards aren't sticky at all."
+      puts "These cards aren't sticky at all."
     elsif @stickiness == 3..5
       puts "Maybe it's time to start washing your hands before you sit down at the poker table."
     elsif @stickiness == 6..8
@@ -48,14 +48,40 @@ class Cards
 
 end
 
-decks_of_cards []
+decks_of_cards = []
 puts "Hello! What color of cards can I get for you?"
 card_color = gets.chomp
-decks_of_cards[deck_1] << Cards.new(card_color)
+decks_of_cards << Cards.new(card_color)
 puts "Great! Should we check how sticky these are? (y/n)"
-answer = gets.chomp
-  if answer == "y" || "yes"
-    
+stickiness_answer = gets.chomp
+
+if stickiness_answer == "n"
+  puts "Okay then."
+elsif stickiness_answer == "y"
+  decks_of_cards.last.check_stickiness
+end
+
+puts "Did you want to get another deck of cards? (y/n)"
+another_deck = gets.chomp
+
+begin
+  if another_deck == "n"
+    break
+  elsif another_deck == "y"
+    puts "What color cards can I get for you?"
+    card_color = gets.chomp
+    decks_of_cards << Cards.new(card_color)
+    puts "Great! Should we check how sticky these are? (y/n)"
+  stickiness_answer = gets.chomp
+  if stickiness_answer == "n"
+    puts "Okay then."
+  elsif stickiness_answer == "y"
+    decks_of_cards.last.check_stickiness
+  end
+  end
+    puts "Did you want to get another deck of cards? (y/n)"
+    another_deck = gets.chomp
+end until another_deck == "n"
 
 #driver code
 #deck = Cards.new("blue")
@@ -65,4 +91,4 @@ answer = gets.chomp
 
 #deck.throw_cards_on_floor
 
-deck.check_stickiness
+#deck.check_stickiness
