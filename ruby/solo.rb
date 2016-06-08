@@ -34,13 +34,13 @@ class Cards
   end
 
   def check_stickiness
-    if @stickiness >= 2
+    if @stickiness <= 2
       puts "These cards aren't sticky at all."
-    elsif @stickiness == 3..5
+    elsif @stickiness >= 3 && @stickiness <= 5
       puts "Maybe it's time to start washing your hands before you sit down at the poker table."
-    elsif @stickiness == 6..8
+    elsif @stickiness >= 6 && @stickiness <= 8
       puts "Ew. These need to be washed. Is that a thing? It needs to be a thing."
-    elsif @stickiness <= 9
+    elsif @stickiness >= 9
       puts "That's disgusting. You can't even play with these."
       @good_condition = false
     end
@@ -82,6 +82,8 @@ begin
     puts "Did you want to get another deck of cards? (y/n)"
     another_deck = gets.chomp
 end until another_deck == "n"
+
+decks_of_cards.each {|deck| p deck}
 
 #driver code
 #deck = Cards.new("blue")
