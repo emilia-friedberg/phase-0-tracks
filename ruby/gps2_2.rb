@@ -84,3 +84,25 @@ p update_quantity("tomatoes", grocery_list, 3)
 p update_quantity("ice cream", grocery_list, 1)
 
 print_list(grocery_list)
+
+=begin
+  
+What did you learn about pseudocode from working on this challenge?
+  That it can make your life a lot easier, if it's detailed and well thought-through.
+  I think that when I was writing the pseudocode for this challenge, I could have broken
+  down the steps more than I did.
+What are the tradeoffs of using arrays and hashes for this challenge?
+  I don't really see any benefits to using an array over a hash for this challenge. The hash allows
+  you to correlate two values (the item and the quantity).
+What does a method return?
+  The last evaluated expression.
+What kind of things can you pass into methods as arguments?
+  Integer, string, float, boolean, array, hash, or other methods!
+How can you pass information between methods?
+  By calling a method within another method, or using it as an argument in that method.
+What concepts were solidified in this challenge, and what concepts are still confusing?
+  I definitely feel like I have a stronger grasp of how methods can interact with one another and a little bit
+  better of a sense of what is and is not attainable from within a given method. However, I still feel like I
+  have a long way to go before I really understand how scope works in Ruby.
+  
+=end
