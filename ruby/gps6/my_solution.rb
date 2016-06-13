@@ -5,7 +5,12 @@
 
 # EXPLANATION OF require_relative
 #
-#
+# Require relative allows you to access or insert information from another file into a program
+# without needing to have the actual code inside of the program you're working on.
+# You can use the name of the file or its relative path to access it.
+# Require is used for accessing features and larger libraries or gems of methods
+# that you have not necessarily written yourself.
+
 require_relative 'state_data'
 
 class VirusPredictor
