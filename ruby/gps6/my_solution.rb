@@ -1,17 +1,13 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge with Maria Uyeda.
+# We spent 2 hours on this challenge.
 
 # EXPLANATION OF require_relative
 #
-# Require relative allows you to access or insert information from another file into a program
-# without needing to have the actual code inside of the program you're working on.
-# You can use the name of the file or its relative path to access it.
-# Require is used for accessing features and larger libraries or gems of methods
-# that you have not necessarily written yourself.
+# Require relative allows you to access or insert information from another file into a program without needing to have the actual code inside of the program you're working on. You can use the name of the file or its relative path to access it. Require is used for accessing features and larger libraries or gems of methods that you have not necessarily written yourself.
 
-# require_relative 'state_data'
+require_relative 'state_data'
 
 class VirusPredictor
 
@@ -114,3 +110,17 @@ end
 #=======================================================================
 # Reflection Section
 
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # The parent hash has strings for keys, and values are assigned by the hash rocket. The child hash has symbols for keys, and values are assigned by a colon.
+
+# What does require_relative do? How is it different from require?
+  # Please see line 8.
+
+# What are some ways to iterate through a hash?
+  # Methods like .each and .times, where you can use a block to act on each key-value pair in turn.
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # That they were instance variables, and therefore unnecessary to use as arguments.
+
+# What concept did you most solidify in this challenge?
+  # I feel like this challenge really helped me understand what to look for when attempting to refactor something.
