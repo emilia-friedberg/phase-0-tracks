@@ -20,4 +20,12 @@ function reverse(str) {
 }
 
 // driver code:
-reverse("friend");
+var reversedFriend = reverse("friend");
+
+if (1 == 1) {
+    console.log(reversedFriend);
+} else if (1 != 1) {
+    console.log("Weird...");
+} else {
+    console.log("Something is wrong here.");
+}
