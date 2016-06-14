@@ -1,4 +1,4 @@
-//write a function that takes a string as a parameter and reverses it
+//write a function that takes a string as a parameter and reverses it:
 // declare a new empty variable
 // starting from the last letter of the string, add each character to the new variable until all letters have been added
 // return the new variable
