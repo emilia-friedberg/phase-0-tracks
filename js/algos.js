@@ -22,10 +22,11 @@ function longestPhraseFinder(array) {
   var longestLength = sortedPhraseLengths[0];
   for (var key in phrasesAndLengths) {
     if (phrasesAndLengths.hasOwnProperty(key) && phrasesAndLengths[key] === longestLength) {
-      console.log(key);
+      return key;
     }
   }
 }
+
 
 
 // Compare two objects for shared key-value pair
@@ -46,16 +47,56 @@ function objectMatcher(object1, object2) {
       keyValueMatch = true;
     }
   }
-  console.log(keyValueMatch);
+  return keyValueMatch;
+}
+
+// Generate random test data
+// Input: an integer for length
+// FOR the number of times specified by the input:
+//  Pick a random letter from the alphabet a random number of times between 1 and 10
+//  Join those letters as a string
+//  Add that string to the array
+// Output: array of given length with strings that have a minimum of 1 letter and max of 10 letters
+
+function numberGenerator(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function letterGenerator() {
+  alphabet = "abcdefghijklmnopqrstuvwyxz";return alphabet.charAt(numberGenerator(1, 27));
+}
+
+function stringGenerator() {
+  letterArray = [];
+  stringLength = numberGenerator(0, 11);
+  for (var i = 0; i <= stringLength; i++) {
+    newLetter = letterGenerator();
+    letterArray.push(newLetter);
+  }
+  string = letterArray.join('');
+  return string;
+}
+
+function arrayOfStringsGenerator(numberOfStrings) {
+  arrayOfStrings = [];
+  alphabet = "abcdefghijklmnopqrstuvwyxz";
+  for (var i = 0; i <= numberOfStrings - 1; i++) {
+    arrayOfStrings.push(stringGenerator());
+  }
+  return arrayOfStrings;
 }
 
 // driver code
+
+// testing longestPhraseFinder
 // longestPhraseFinder(["long phrase", "longest phrase", "longer phrase"]);
 // longestPhraseFinder(["supercallifragilistic", "supercall", "supercallifragilisticexpealladocious", "expeallodocious", "super"]);
 // longestPhraseFinder(["short", "even shorter", "absolute shortest", "the preceding statements are false"]);
 // longestPhraseFinder(["this", "is", "small"])
-objectMatcher({ name: "Steven", age: 54 }, { name: "Tamir", age: 54 });
-objectMatcher({ name: "Steven", age: 54 }, { name: "Tamir", age: 17 });
-objectMatcher({ food: "olives", flavor: "briny" }, { food: "pickles", flavor: "briny" });
-objectMatcher({ food: "olives", flavor: "briny" }, { food: "candy", flavor: "sweet" });
-objectMatcher({ key: "value", key2: "value2", key3: "value3" }, { key4: "value4", key5: "value3" })
+
+// testing objectMatcher
+// objectMatcher({ name: "Steven", age: 54 }, { name: "Tamir", age: 54 });
+// objectMatcher({ name: "Steven", age: 54 }, { name: "Tamir", age: 17 });
+// objectMatcher({ food: "olives", flavor: "briny" }, { food: "pickles", flavor: "briny" });
+// objectMatcher({ food: "olives", flavor: "briny" }, { food: "candy", flavor: "sweet" });
+// objectMatcher({ key: "value", key2: "value2", key3: "value3" }, { key4: "value4", key5: "value3" })
