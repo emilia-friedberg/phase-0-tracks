@@ -63,12 +63,13 @@ function numberGenerator(min, max) {
 }
 
 function letterGenerator() {
-  alphabet = "abcdefghijklmnopqrstuvwyxz";return alphabet.charAt(numberGenerator(1, 27));
+  alphabet = "abcdefghijklmnopqrstuvwyxz";
+  return alphabet.charAt(numberGenerator(0, 26));
 }
 
 function stringGenerator() {
   letterArray = [];
-  stringLength = numberGenerator(0, 11);
+  stringLength = numberGenerator(0, 10);
   for (var i = 0; i <= stringLength; i++) {
     newLetter = letterGenerator();
     letterArray.push(newLetter);
@@ -100,3 +101,36 @@ function arrayOfStringsGenerator(numberOfStrings) {
 // objectMatcher({ food: "olives", flavor: "briny" }, { food: "pickles", flavor: "briny" });
 // objectMatcher({ food: "olives", flavor: "briny" }, { food: "candy", flavor: "sweet" });
 // objectMatcher({ key: "value", key2: "value2", key3: "value3" }, { key4: "value4", key5: "value3" })
+
+// testing arrayOfStringsGenerator
+// arrayOfStringsGenerator(5)
+array1 = arrayOfStringsGenerator(5);
+console.log(array1);
+console.log(longestPhraseFinder(array1));
+array2 = arrayOfStringsGenerator(12);
+console.log(array2);
+console.log(longestPhraseFinder(array2));
+array3 = arrayOfStringsGenerator(100);
+console.log(array3);
+console.log(longestPhraseFinder(array3));
+array4 = arrayOfStringsGenerator(7);
+console.log(array4);
+console.log(longestPhraseFinder(array4));
+array5 = arrayOfStringsGenerator(10000);
+console.log(array5);
+console.log(longestPhraseFinder(array5));
+array6 = arrayOfStringsGenerator(80);
+console.log(array6);
+console.log(longestPhraseFinder(array6));
+array7 = arrayOfStringsGenerator(35);
+console.log(array7);
+console.log(longestPhraseFinder(array7));
+array8 = arrayOfStringsGenerator(19);
+console.log(array8);
+console.log(longestPhraseFinder(array8));
+array9 = arrayOfStringsGenerator(10);
+console.log(array9);
+console.log(longestPhraseFinder(array9));
+array10 = arrayOfStringsGenerator(8);
+console.log(array10);
+console.log(longestPhraseFinder(array10));
