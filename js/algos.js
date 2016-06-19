@@ -7,17 +7,17 @@
 // Search the object (containing the words or phrases paired with their corresponding lengths) for the word or phrase that corresponds to the longest length
 // Print that word or phrase
 
-var phrasesAndLengths = {};
-var phraseLengths = [];
-var longestPhrase = "";
 
 function longestPhraseFinder(array) {
+  var phrasesAndLengths = {};
+  var phraseLengths = [];
   for (var i = 0; i < array.length; i++) {
     phrasesAndLengths[array[i]] = array[i].length;
     phraseLengths.push(array[i].length);
   }
   var sortedPhraseLengths = phraseLengths.sort(function(a, b) {
-    return b - a });
+    return b - a
+  });
   var longestLength = sortedPhraseLengths[0];
   for (var key in phrasesAndLengths) {
     if (phrasesAndLengths.hasOwnProperty(key) && phrasesAndLengths[key] === longestLength) {
@@ -26,4 +26,8 @@ function longestPhraseFinder(array) {
   }
 }
 
+// driver code
 longestPhraseFinder(["long phrase", "longest phrase", "longer phrase"]);
+longestPhraseFinder(["supercallifragilistic", "supercall", "supercallifragilisticexpealladocious", "expeallodocious", "super"]);
+longestPhraseFinder(["short", "even shorter", "absolute shortest", "the preceding statements are false"]);
+longestPhraseFinder(["this", "is", "small"])
