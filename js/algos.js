@@ -74,29 +74,29 @@ function numberGenerator(min, max) {
 }
 
 function letterGenerator() {
-  alphabet = "abcdefghijklmnopqrstuvwyxz";
+  var alphabet = "abcdefghijklmnopqrstuvwyxz";
   return alphabet.charAt(numberGenerator(0, 26));
 }
 
 function stringGenerator() {
-  letterArray = [];
+  var string = '';
   stringLength = numberGenerator(0, 10);
   for (var i = 0; i <= stringLength; i++) {
     newLetter = letterGenerator();
-    letterArray.push(newLetter);
+    string = string + newLetter;
   }
-  string = letterArray.join('');
   return string;
 }
 
 function arrayOfStringsGenerator(numberOfStrings) {
-  arrayOfStrings = [];
-  alphabet = "abcdefghijklmnopqrstuvwyxz";
+  var arrayOfStrings = [];
+  var alphabet = "abcdefghijklmnopqrstuvwyxz";
   for (var i = 0; i <= numberOfStrings - 1; i++) {
     arrayOfStrings.push(stringGenerator());
   }
   return arrayOfStrings;
 }
+
 
 // driver code
 
