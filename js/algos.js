@@ -9,24 +9,35 @@
 // Output: longest word or phrase
 
 
-function longestPhraseFinder(array) {
+function createPhrasesAndLengths(array) {
   var phrasesAndLengths = {};
-  var phraseLengths = [];
   for (var i = 0; i < array.length; i++) {
     phrasesAndLengths[array[i]] = array[i].length;
+  }
+  return phrasesAndLengths;
+}
+
+function findGreatestLength(array) {
+  var phraseLengths = [];
+  for (var i = 0; i < array.length; i++) {
     phraseLengths.push(array[i].length);
   }
   var sortedPhraseLengths = phraseLengths.sort(function(a, b) {
     return b - a
   });
   var longestLength = sortedPhraseLengths[0];
+  return longestLength;
+}
+
+function longestPhraseFinder(array) {
+  var phrasesAndLengths = createPhrasesAndLengths(array);
+  var longestLength = findGreatestLength(array);
   for (var key in phrasesAndLengths) {
     if (phrasesAndLengths.hasOwnProperty(key) && phrasesAndLengths[key] === longestLength) {
       return key;
     }
   }
 }
-
 
 
 // Compare two objects for shared key-value pair
