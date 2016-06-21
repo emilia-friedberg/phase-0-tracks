@@ -1,0 +1,67 @@
+Display the information in one table (either table is fine).
+  command: SELECT * FROM students;
+  output:
+    1|Aiden Pena|6|false|3
+    2|Mackenzie Williams|7|true|1
+    3|Luke Marrero|6|false|2
+    4|Anita Davis|7|false|3
+    5|Kayliah Skyler|6|false|2
+    6|Tommy Bennett|6|true|1
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+  command: UPDATE students SET has_iep="true" WHERE name="Luke Marrero";
+  output: N/A
+
+Display the information in both tables using one query.
+  command: SELECT * FROM students, classes WHERE students.class_id = classes.id;
+  output:
+    1|Aiden Pena|6|false|3|3|Ms. Mohammed
+    2|Mackenzie Williams|7|true|1|1|Mrs. Elliot
+    3|Luke Marrero|6|true|2|2|Mr. Bybee
+    4|Anita Davis|7|false|3|3|Ms. Mohammed
+    5|Kayliah Skyler|6|false|2|2|Mr. Bybee
+    6|Tommy Bennett|6|true|1|1|Mrs. Elliot
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+  command: SELECT students.name, classes.teacher FROM students JOIN classes ON students.class_id = classes.id;
+  output:
+    Aiden Pena|Ms. Mohammed
+    Mackenzie Williams|Mrs. Elliot
+    Luke Marrero|Mr. Bybee
+    Anita Davis|Ms. Mohammed
+    Kayliah Skyler|Mr. Bybee
+    Tommy Bennett|Mrs. Elliot
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+  command: DELETE FROM students WHERE id = 1;
+  output: N/A
+
+Try a few different joins in your database.
+  INNER JOIN (aka JOIN, displays all rows where common condition is met)
+    command: SELECT students.name, classes.teacher FROM students INNER JOIN classes ON students.class_id = classes.id;
+    output:
+      Mackenzie Williams|Mrs. Elliot
+      Luke Marrero|Mr. Bybee
+      Anita Davis|Ms. Mohammed
+      Kayliah Skyler|Mr. Bybee
+      Tommy Bennett|Mrs. Elliot
+
+  INNER JOIN
+    command: SELECT students.name, students.age, students.has_iep, classes.teacher FROM students INNER JOIN classes ON students.class_id = classes.teacher;
+    output: none
+
+  LEFT JOIN (displays all rows in first table mentioned, plus all rows where common condition is met)
+    command: SELECT students.name, students.age, students.has_iep, classes.teacher FROM students LEFT JOIN classes ON students.class_id = classes.teacher;
+    output:
+      Mackenzie Williams|7|true|
+      Luke Marrero|6|true|
+      Anita Davis|7|false|
+      Kayliah Skyler|6|false|
+      Tommy Bennett|6|true|
+
+  LEFT JOIN
+    command: SELECT students.name, students.age, students.has_iep, classes.teacher FROM classes LEFT JOIN students ON students.class_id = classes.teacher;
+    output:
+      |||Mrs. Elliot
+      |||Mr. Bybee
+      |||Ms. Mohammed
