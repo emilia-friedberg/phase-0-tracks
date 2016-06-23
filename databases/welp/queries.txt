@@ -1,0 +1,22 @@
+Join three tables:
+  command:
+    SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+  output: 
+    6|Sushi World|1|4|Great California roll, for Connecticut.|6|3|3|Angela|Jolie
+    3|The Beagle Nightclub|2|2|Strong drinks, but the dog theme was off-putting.|3|1|1|Bradford|Pitt
+    5|Plumbing by Janet|3|5|Janet's team fixed a stubborn clog in minutes!|5|7|7|Denzel|George
+
+Choose instead to just view the user's names, the business name, the star rating, and the comment.
+  command:
+    SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM businesses JOIN reviews ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id;
+  output:
+    Angela|Jolie|Sushi World|4|Great California roll, for Connecticut.
+    Bradford|Pitt|The Beagle Nightclub|2|Strong drinks, but the dog theme was off-putting.
+    Denzel|George|Plumbing by Janet|5|Janet's team fixed a stubborn clog in minutes!
+
+View data of all three tables for just one business.
+  command:
+    SELECT * FROM businesses, reviews, users WHERE businesses.id = 5 AND reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+  output:
+    5|Plumbing by Janet|3|5|Janet's team fixed a stubborn clog in minutes!|5|7|7|Denzel|George
