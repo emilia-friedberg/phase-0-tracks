@@ -22,6 +22,11 @@ create_table_cmd = <<-SQL
   )
 SQL
 
+def create_book(books_db, title, first_name, last_name, year_published)
+  books_db.execute("INSERT INTO books (title, first_name, last_name, year_published) VALUES (?, ?, ?, ?)", [title, first_name, last_name, year_published])
+end
+
+
 books_db.execute(create_table_cmd)
 
 list_of_books = []
@@ -56,6 +61,8 @@ begin
   }
 
   list_of_books << new_book
+
+  create_book(books_db, title, first_name, last_name, year_published)
 
   puts "Would you like to add another book to your library? (y/n)"
   another_book = gets.chomp
