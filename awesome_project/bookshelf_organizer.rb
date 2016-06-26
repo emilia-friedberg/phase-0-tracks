@@ -32,12 +32,14 @@ books_db.execute(create_table_cmd)
 
 list_of_books = []
 
+=begin
+
 puts "Hello! Let's get your bookshelf in order!"
 puts "To add a book to your library, please fill out the following information."
 
 begin
   puts "Title:"
-  title = gets.chomp.capitalize
+  title = gets.chomp.split.map { |x| x.capitalize }.join(" ")
   puts "Author's First Name:"
   first_name = gets.chomp.capitalize
   puts "Author's Last Name:"
@@ -61,12 +63,7 @@ begin
     year_published: year_published
   }
 
-  p new_book
-  p new_book[:title]
-
   puts "Your library now includes #{new_book[:title]}, written by #{new_book[:first_name]} #{new_book[:last_name]} and published in #{new_book[:year_published]}."
-
-  list_of_books << new_book
 
   create_book(books_db, title, first_name, last_name, year_published)
 
@@ -74,10 +71,54 @@ begin
   another_book = gets.chomp
 end until another_book == "n" || another_book == "no"
 
+=end
+
 puts "Here are all the books in your library:"
 library = books_db.execute("SELECT * FROM books")
 library.each do |book|
   puts "#{book['title']} by #{book['first_name']} #{book['last_name']}."
   puts "----------------------------------"
+  list_of_books << book
 end
 
+
+# clean up list of books array
+list_of_books.each do |hash|
+  hash.delete("id")
+  hash.delete("0")
+  hash.delete("1")
+  hash.delete("2")
+  hash.delete("3")
+  hash.delete("4")
+end
+
+puts "Would you like to organize your books alphabetically (by author's last name) or chronologically (by publication year)?"
+organizational_preference = gets.chomp
+
+# ensure correct input
+if organizational_preference == "alphabetically" || organizational_preference == "chronologically"
+  correct_input = true
+else
+  correct_input = false
+  until organizational_preference == "alphabetically" || organizational_preference == "chronologically"
+    puts "Please enter either 'alphabetically' or 'chronologically'."
+    organizational_preference = gets.chomp
+  end
+end
+
+
+case organizational_preference
+when "alphabetically"
+  list_of_books.sort_by! { |hash| hash["last_name"]}
+  puts "Great! Here is the list of books in your library, sorted alphabetically by author's last name:"
+  list_of_books.each do |book|
+    puts "#{book['last_name']}, #{book['first_name']} - #{book['title']}."
+  end
+when "chronologically"
+  list_of_books.sort_by! { |hash| hash["year_published"]}
+  "Great! Here is the list of books in your library, sorted chronologically by year published."
+  list_of_books.each do |book|
+    puts "#{book['year_published']} - #{book[title]} by #{book['last_name]}, #{book[first_name]}."
+  end
+
+end
