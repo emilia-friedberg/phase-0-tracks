@@ -1,7 +1,7 @@
 # Bookshelf Organizer
 require 'sqlite3'
 
-books_db = SQLite3::Database.new("books.db")
+books_db = SQLite3::Database.new('books.db')
 books_db.results_as_hash = true
 
 create_table_cmd = <<-SQL
@@ -15,7 +15,7 @@ create_table_cmd = <<-SQL
 SQL
 
 def create_book(books_db, title, first_name, last_name, year_published)
-  books_db.execute("INSERT INTO books (title, first_name, last_name, year_published) VALUES (?, ?, ?, ?)", [title, first_name, last_name, year_published])
+  books_db.execute('INSERT INTO books (title, first_name, last_name, year_published) VALUES (?, ?, ?, ?)', [title, first_name, last_name, year_published])
 end
 
 books_db.execute(create_table_cmd)
@@ -27,11 +27,11 @@ puts "To add a book to your library, please fill out the following information."
 
 begin
   puts "Title:"
-  title = gets.chomp.split.map { |x| x.capitalize }.join(" ")
+  title = gets.chomp.split.map { |x| x.capitalize }.join(' ')
   puts "Author's First Name:"
-  first_name = gets.chomp.split.map { |x| x.capitalize }.join(" ")
+  first_name = gets.chomp.split.map { |x| x.capitalize }.join(' ')
   puts "Author's Last Name:"
-  last_name = gets.chomp.split.map { |x| x.capitalize }.join(" ")
+  last_name = gets.chomp.split.map { |x| x.capitalize }.join(' ')
   puts "Year Published:"
   year_published = gets.chomp
 
@@ -57,11 +57,11 @@ begin
 
   puts "Would you like to add another book to your library? (y/n)"
   another_book = gets.chomp
-end until another_book == "n" || another_book == "no"
+end until another_book == 'n' || another_book == 'n'
 
 # print books
 puts "Here are all the books in your library:"
-library = books_db.execute("SELECT * FROM books")
+library = books_db.execute('SELECT * FROM books')
 library.each do |book|
   puts "#{book['title']} by #{book['first_name']} #{book['last_name']}."
   puts "----------------------------------"
@@ -72,7 +72,7 @@ puts "Would you like to organize your books alphabetically (by author's last nam
 organizational_preference = gets.chomp
 
 # ensure correct input
-if organizational_preference == "alphabetically" || organizational_preference == "chronologically"
+if organizational_preference == 'alphabetically' || organizational_preference == 'chronologically'
   correct_input = true
 else
   correct_input = false
@@ -84,14 +84,14 @@ end
 
 # organize books
 case organizational_preference
-when "alphabetically"
-  list_of_books.sort_by! { |hash| hash["last_name"]}
+when 'alphabetically'
+  list_of_books.sort_by! { |hash| hash['last_name'] }
   puts "Great! Here is the list of books in your library, sorted alphabetically by author's last name:"
   list_of_books.each do |book|
     puts "#{book['last_name']}, #{book['first_name']} - #{book['title']}."
   end
-when "chronologically"
-  list_of_books.sort_by! { |hash| hash["year_published"]}
+when 'chronologically'
+  list_of_books.sort_by! { |hash| hash['year_published']}
   "Great! Here is the list of books in your library, sorted chronologically by year published."
   list_of_books.each do |book|
     puts "#{book['year_published']} - #{book['title']} by #{book['last_name']}, #{book['first_name']}."
