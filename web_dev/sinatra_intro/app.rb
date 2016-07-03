@@ -53,3 +53,18 @@ get '/contact' do
   Philadelphia, PA<br>
   19146<br>"
 end
+
+# write a /great_job route that can take a person's name as a query parameter
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+
+
+
+
