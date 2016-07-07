@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Students Ordered by Campus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Students Ordered by Campus</h1>
+  <p> <% @list_of_students = []
+    <% @students.each do |student| %>
+      <% list_of_students << student %>
+    <% end %>
+    <% @list_of_students.sort_by! { |hash| hash['campus']} %>
+  </p>
+  <ul>
+    <% @list_of_students.each do |student| %>
+      <li><%= student['campus'] %> - <%= student['name'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
