@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Students Ordered by Campus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Students Ordered by Campus</h1>
+  <ul>
+    <% @list_of_students.each do |student| %>
+      <li><%= student['campus'] %> - <%= student['name'] %></li>
+    <% end %>
+  </ul>
+
+</body>
+</html>

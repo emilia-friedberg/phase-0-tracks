@@ -25,3 +25,16 @@ post '/students' do
 end
 
 # add static resources
+
+# sort students by campus
+get '/students/campus' do
+  @students = db.execute("SELECT * FROM students")
+  @list_of_students = []
+  @students.each do |student|
+    @list_of_students << student
+  end
+
+  @list_of_students.sort_by! { |hash| hash['campus']}
+
+  erb :campus
+end
